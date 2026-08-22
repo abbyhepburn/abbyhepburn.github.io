@@ -1,13 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+code,
+pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+:root {
+  --color-bg: #0c110e;
+  --color-surface: #101612;
+  --color-card: #141c17;
+  --color-card-hover: #182219;
+  --color-line: #26332a;
+  --color-line-bright: #3a4c3e;
+  --color-ink: #e6ece5;
+  --color-muted: #93a698;
+  --color-faint: #5f7264;
+  --color-sage: #a3b18a;
+  --color-sage-bright: #c9d8ab;
+  --color-peach: #e8c4a0;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-width: 72rem;
+}
+.text-sage { color: var(--color-sage); }
+.text-sage-bright { color: var(--color-sage-bright); }
+.text-muted { color: var(--color-muted); }
+.text-faint { color: var(--color-faint); }
+.text-ink { color: var(--color-ink); }
+.text-peach { color: var(--color-peach); }
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(163, 177, 138, 0.13) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-bright);
+  border-radius: 999px;
 }
