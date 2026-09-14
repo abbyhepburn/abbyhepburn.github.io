@@ -28,29 +28,9 @@ function AboutSection() {
           <div className="reveal">
             <p className="terminal-command">$ cat about.md</p>
             <div className="about-text">
-              <p>
-                I&apos;m a Computer Engineering student at the{' '}
-                <span className="text-ink">University of Florida</span> who
-                enjoys turning real-world problems into thoughtful software —
-                shaped by a curiosity for{' '}
-                <span className="text-sage">AI</span>,{' '}
-                <span className="text-sage">design</span>, and how people
-                actually interact with technology.
-              </p>
-              <p>
-                Most of my time goes into{' '}
-                <span className="text-ink">building full projects end-to-end</span>
-                : from computer vision pipelines and web apps to command-line
-                tools and robotics software. I like the parts of software you
-                don&apos;t see but definitely feel.
-              </p>
-              <p>
-                Outside of code I stay active in campus communities like{' '}
-                <span className="text-ink">UF Trailblazers</span> and{' '}
-                <span className="text-ink">NSBE</span>. I believe good
-                conversations shape how we build — feel free to reach out with
-                questions or ideas.
-              </p>
+              <p>I&apos;m a Computer Engineering student at the University of Florida, pursuing a minor in Sales Engineering. I expect to graduate in May 2029.</p>
+              <p>My experience includes data engineering at BeachLens, power delivery engineering at NextEra Energy, and LLM research at UF Data Studio.</p>
+              <p>I build computer vision and AI projects, including Face Detection System, FlexRight, and Support Bot. I also lead software work with NSBE and Real World Engineering.</p>
             </div>
 
             <ul className="about-cards">

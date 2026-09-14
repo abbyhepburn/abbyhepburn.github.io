@@ -21,9 +21,9 @@ function ProjectCard({ project }) {
           ))}
         </div>
         <div className="project-links">
-          <a href={project.github} target="_blank" rel="noopener noreferrer">
+          {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer">
             <IconGithub /> source
-          </a>
+          </a>}
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noopener noreferrer">
               <IconExternal /> demo

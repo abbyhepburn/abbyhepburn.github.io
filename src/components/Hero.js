@@ -48,12 +48,12 @@ function Hero() {
             <span className="cursor-blink" />
           </p>
           <p className="hero-description">
-            CpE @ the University of Florida. I live by a simple philosophy:{' '}
+            Computer Engineering at the University of Florida. {' '}
             <span className="text-ink">{site.philosophy}</span>{' '}
             {site.philosophyContext}
           </p>
           <div className="hero-actions">
-            <a href={`mailto:${site.email}`} className="btn btn-primary">
+            <a href="/Abigail-Hepburn-Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <IconDownload /> resume.pdf
             </a>
             <a
@@ -103,12 +103,12 @@ function Hero() {
               <pre className="identity-json">
                 {'{\n'}
                 {'  '}<span className="json-key">&quot;role&quot;</span>:{' '}
-                <span className="json-string">&quot;CpE student @ UF&quot;</span>,{'\n'}
+                <span className="json-string">&quot;Computer Engineering student @ UF&quot;</span>,{'\n'}
                 {'  '}<span className="json-key">&quot;focus&quot;</span>: [
-                <span className="json-string">&quot;full-stack&quot;</span>,{' '}
+                <span className="json-string">&quot;data engineering&quot;</span>,{' '}
                 <span className="json-string">&quot;computer vision&quot;</span>,{'\n'}
-                {'            '}<span className="json-string">&quot;robotics&quot;</span>,{' '}
-                <span className="json-string">&quot;embedded systems&quot;</span>],{'\n'}
+                {'            '}<span className="json-string">&quot;software&quot;</span>,{' '}
+                <span className="json-string">&quot;power delivery&quot;</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;coords&quot;</span>: [
                 <span className="json-bright">Gainesville, FL</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;status&quot;</span>:{' '}
