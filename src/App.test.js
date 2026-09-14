@@ -14,6 +14,10 @@ test('terminal responds to resume and help commands', () => {
   expect(document.querySelectorAll('.leadership-photos img')).toHaveLength(2);
   expect(screen.queryByText(/hello_world/i)).not.toBeInTheDocument();
   expect(screen.queryByText('👋')).not.toBeInTheDocument();
+  expect(document.querySelector('.marquee-wrap')).toBeNull();
+  expect(screen.getByRole('link', { name: /say hello/i })).toHaveAttribute('href', 'mailto:abigailzhepburn@gmail.com');
+  expect(screen.getByText('Open to internships, oppurtuntities, and good conversations.')).toBeInTheDocument();
+  expect(screen.queryByText(/designed & built from scratch/i)).not.toBeInTheDocument();
   fireEvent.change(input, { target: { value: 'experience' } });
   fireEvent.submit(input.closest('form'));
   expect(screen.getByText(/BeachLens — Data Engineer Intern/)).toBeInTheDocument();

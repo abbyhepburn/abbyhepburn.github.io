@@ -23,12 +23,9 @@ function Footer() {
           <h2>
             Let&apos;s build something<span className="text-sage">.</span>
           </h2>
-          <p>
-            Open to internships, collabs, and good conversations. My inbox is a
-            lot less intimidating than my commit history.
-          </p>
+          <p>Open to internships, oppurtuntities, and good conversations.</p>
           <div className="footer-actions">
-            <a href={`mailto:${site.email}`} className="btn btn-primary">
+            <a href="mailto:abigailzhepburn@gmail.com" className="btn btn-primary">
               <IconMail /> say hello
             </a>
             <button
@@ -62,13 +59,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} {site.name}{' '}
-            <span className="text-sage">·</span> designed &amp; built from scratch
-          </p>
-          <p>
-            react + css + caffeine <span className="text-sage">·</span> exit 0
-          </p>
+          <p>© {new Date().getFullYear()} {site.name}</p>
         </div>
       </div>
     </footer>

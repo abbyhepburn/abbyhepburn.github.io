@@ -30,8 +30,6 @@ function Hero() {
     return () => clearTimeout(timeout);
   }, [displayText, deleting, roleIndex]);
 
-  const skills = [...site.skills, ...site.skills];
-
   return (
     <header id="top" className="hero">
       <div className="hero-grid">
@@ -96,8 +94,7 @@ function Hero() {
                 {'  '}<span className="json-key">&quot;focus&quot;</span>: [
                 <span className="json-string">&quot;data engineering&quot;</span>,{' '}
                 <span className="json-string">&quot;computer vision&quot;</span>,{'\n'}
-                {'            '}<span className="json-string">&quot;software&quot;</span>,{' '}
-                <span className="json-string">&quot;power delivery&quot;</span>],{'\n'}
+                {'            '}<span className="json-string">&quot;software&quot;</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;coords&quot;</span>: [
                 <span className="json-bright">Gainesville, FL</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;status&quot;</span>:{' '}
@@ -108,16 +105,6 @@ function Hero() {
               </pre>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="marquee-wrap">
-        <div className="marquee">
-          {skills.map((skill, i) => (
-            <span key={`${skill}-${i}`} className="marquee-item">
-              {skill} <span className="marquee-diamond">◆</span>
-            </span>
-          ))}
         </div>
       </div>
 
