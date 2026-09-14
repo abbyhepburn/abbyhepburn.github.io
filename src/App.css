@@ -597,8 +597,7 @@ main,
 .email-copy-status { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 100; max-width: min(25rem, calc(100vw - 2.5rem)); padding: 0.85rem 1rem; border: 1px solid var(--color-sage); border-radius: 0.6rem; background: var(--color-card); color: var(--color-ink); font: 0.85rem var(--font-mono); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35); }
 .footer-social button { display: inline-flex; align-items: center; justify-content: center; width: 2.7rem; height: 2.7rem; border: 1px solid var(--color-line); border-radius: 0.5rem; color: var(--color-muted); }
 .footer-social button:hover { border-color: var(--color-sage); color: var(--color-sage); }
-.section-scroll-button { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 45; display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border: 1px solid var(--color-sage); border-radius: 50%; background: var(--color-card); color: var(--color-sage); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); }
-.section-scroll-button:hover { background: var(--color-card-hover); color: var(--color-sage-bright); }
+.section-scroll-button { position: fixed; left: 1.25rem; bottom: 1.25rem; z-index: 45; display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border: 0; border-radius: 0; background: transparent; color: var(--color-sage); box-shadow: none; }
+.section-scroll-button:hover { color: var(--color-sage-bright); }
 .section-scroll-top svg { transform: rotate(180deg); }
 #contact { scroll-margin-top: 6rem; }
-.email-copy-status { right: auto; left: 1.25rem; }
