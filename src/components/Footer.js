@@ -11,7 +11,7 @@ function Footer() {
           <h2>
             Let&apos;s build something<span className="text-sage">.</span>
           </h2>
-          <p>Open to internships, oppurtuntities, and good conversations.</p>
+          <p>Open to internships, opportunities, and good conversations.</p>
           <div className="footer-social">
             <EmailCopyButton>
               <IconMail />
