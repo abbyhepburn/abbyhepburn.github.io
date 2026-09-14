@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { IconChevronLeft, IconChevronRight, IconPause, IconPlay } from './Icons';
 import SectionHeader from './SectionHeader';
 import { galleryImages } from '../data/portfolio';
 function GallerySection() {
@@ -21,7 +22,7 @@ function GallerySection() {
           title="Gallery"
           subtitle="proof that i go outside"
         />
-        <div className="gallery-window terminal-window">
+        <div className="gallery-window terminal-window reveal">
           <div className="terminal-titlebar gallery-titlebar">
             <div className="titlebar-left">
               <span className="dot dot-red" />
@@ -44,7 +45,7 @@ function GallerySection() {
                 setIndex((i) => (i - 1 + galleryImages.length) % galleryImages.length)
               }
             >
-              ‹
+              <IconChevronLeft />
             </button>
             <button
               type="button"
@@ -52,7 +53,7 @@ function GallerySection() {
               aria-label="Next image"
               onClick={() => setIndex((i) => (i + 1) % galleryImages.length)}
             >
-              ›
+              <IconChevronRight />
             </button>
             <button
               type="button"
@@ -60,7 +61,7 @@ function GallerySection() {
               aria-label={paused ? 'Play slideshow' : 'Pause slideshow'}
               onClick={() => setPaused((p) => !p)}
             >
-              {paused ? '▶ play' : '⏸ pause'}
+              {paused ? <><IconPlay /> play</> : <><IconPause /> pause</>}
             </button>
           </div>
           <div className="gallery-footer">

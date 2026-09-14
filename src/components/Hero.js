@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { site } from '../data/portfolio';
+import { IconArrowDown, IconDownload, IconGithub, IconLinkedin } from './Icons';
+
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
     const current = site.roles[roleIndex];
     let timeout;
+
     if (!deleting && displayText === current) {
       timeout = setTimeout(() => setDeleting(true), 1800);
     } else if (deleting && displayText === '') {
@@ -22,9 +26,12 @@ function Hero() {
         setDisplayText(next);
       }, deleting ? 40 : 70);
     }
+
     return () => clearTimeout(timeout);
   }, [displayText, deleting, roleIndex]);
+
   const skills = [...site.skills, ...site.skills];
+
   return (
     <header id="top" className="hero">
       <div className="hero-grid">
@@ -34,22 +41,20 @@ function Hero() {
           </p>
           <h1 className="hero-title">
             {site.firstName} <span className="text-sage">{site.lastName}</span>
+            <span className="wave" aria-hidden="true">👋</span>
           </h1>
           <p className="hero-typewriter">
-            <span className="text-faint">$</span> {displayText}
+            {displayText}
             <span className="cursor-blink" />
           </p>
           <p className="hero-description">
-            {site.tagline.split('—')[0]}—{' '}
+            CpE @ the University of Florida. I live by a simple philosophy:{' '}
             <span className="text-ink">{site.philosophy}</span>{' '}
             {site.philosophyContext}
           </p>
           <div className="hero-actions">
-            <a
-              href={`mailto:${site.email}`}
-              className="btn btn-primary"
-            >
-              ↓ resume.pdf
+            <a href={`mailto:${site.email}`} className="btn btn-primary">
+              <IconDownload /> resume.pdf
             </a>
             <a
               href={site.github}
@@ -58,7 +63,7 @@ function Hero() {
               className="btn btn-icon"
               aria-label="GitHub"
             >
-              GH
+              <IconGithub />
             </a>
             <a
               href={site.linkedin}
@@ -67,13 +72,14 @@ function Hero() {
               className="btn btn-icon"
               aria-label="LinkedIn"
             >
-              in
+              <IconLinkedin />
             </a>
             <a href="#terminal" className="hero-terminal-link">
               or try the terminal ↓
             </a>
           </div>
         </div>
+
         <div className="hero-card-wrap">
           <div className="terminal-window hero-identity">
             <div className="terminal-titlebar">
@@ -84,7 +90,11 @@ function Hero() {
             </div>
             <div className="terminal-body identity-body">
               <div className="identity-header">
-                <div className="identity-avatar">AH</div>
+                <img
+                  className="identity-avatar"
+                  src={site.avatar}
+                  alt={site.name}
+                />
                 <div>
                   <p className="identity-name">{site.name}</p>
                   <p className="identity-location">{site.location}</p>
@@ -104,13 +114,14 @@ function Hero() {
                 {'  '}<span className="json-key">&quot;status&quot;</span>:{' '}
                 <span className="json-string">&quot;building things&quot;</span>,{'\n'}
                 {'  '}<span className="json-key">&quot;sanity&quot;</span>:{' '}
-                <span className="json-bright">&quot;...&quot;</span>{'\n'}
+                <span className="json-bright">&quot;93%&quot;</span>{'\n'}
                 {'}'}
               </pre>
             </div>
           </div>
         </div>
       </div>
+
       <div className="marquee-wrap">
         <div className="marquee">
           {skills.map((skill, i) => (
@@ -120,10 +131,12 @@ function Hero() {
           ))}
         </div>
       </div>
+
       <a href="#about" className="scroll-indicator" aria-label="Scroll to about">
-        ↓
+        <IconArrowDown />
       </a>
     </header>
   );
 }
+
 export default Hero;

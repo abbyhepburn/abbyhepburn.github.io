@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { site } from '../data/portfolio';
+import { IconCopy, IconGithub, IconLinkedin, IconMail } from './Icons';
+
 function Footer() {
   const [copied, setCopied] = useState(false);
+
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(site.email);
@@ -11,6 +14,7 @@ function Footer() {
       setCopied(false);
     }
   };
+
   return (
     <footer className="footer">
       <div className="section-container">
@@ -25,10 +29,16 @@ function Footer() {
           </p>
           <div className="footer-actions">
             <a href={`mailto:${site.email}`} className="btn btn-primary">
-              ✉ say hello
+              <IconMail /> say hello
             </a>
-            <button type="button" className="btn btn-secondary" onClick={copyEmail}>
-              {copied ? '✓ copied!' : `⎘ ${site.email}`}
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={copyEmail}
+              aria-label="Copy email address"
+            >
+              <IconCopy />
+              {copied ? 'copied!' : site.email}
             </button>
           </div>
           <div className="footer-social">
@@ -38,7 +48,7 @@ function Footer() {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              GH
+              <IconGithub />
             </a>
             <a
               href={site.linkedin}
@@ -46,10 +56,11 @@ function Footer() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              in
+              <IconLinkedin />
             </a>
           </div>
         </div>
+
         <div className="footer-bottom">
           <p>
             © {new Date().getFullYear()} {site.name}{' '}
@@ -63,4 +74,5 @@ function Footer() {
     </footer>
   );
 }
+
 export default Footer;

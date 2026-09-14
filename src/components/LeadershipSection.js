@@ -12,7 +12,7 @@ function LeadershipSection() {
         />
         <div className="leadership-grid">
           {leadership.map((item) => (
-            <article key={item.id} className="leadership-card group">
+            <article key={item.id} className="leadership-card group reveal">
               <div className="leadership-meta">
                 <span>org_{item.id}</span>
                 <span className="leadership-date">{item.date}</span>

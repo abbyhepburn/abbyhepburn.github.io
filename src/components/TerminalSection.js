@@ -67,7 +67,7 @@ function TerminalSection() {
           subtitle="This one actually works. Type help and poke around."
         />
         <div
-          className="terminal-window terminal-interactive"
+          className="terminal-window terminal-interactive reveal"
           onClick={() => inputRef.current?.focus()}
           role="presentation"
         >

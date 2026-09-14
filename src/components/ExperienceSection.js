@@ -1,5 +1,22 @@
 import SectionHeader from './SectionHeader';
 import { experience } from '../data/portfolio';
+import { IconExternal } from './Icons';
+
+function highlightText(text, highlights = []) {
+  if (!highlights.length) return text;
+  const pattern = new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
+  const parts = text.split(pattern);
+  return parts.map((part, i) =>
+    highlights.includes(part) ? (
+      <span key={`${part}-${i}`} className="text-sage-bright">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
 function ExperienceSection() {
   return (
     <section id="experience" className="section">
@@ -10,9 +27,10 @@ function ExperienceSection() {
           title="Experience"
           subtitle="the places that somehow let me on the team"
         />
+
         <ol className="timeline">
           {experience.map((item) => (
-            <li key={`${item.company}-${item.role}`} className="timeline-item">
+            <li key={`${item.company}-${item.role}`} className="timeline-item reveal">
               <span className="timeline-dot" />
               <p className="timeline-date">{item.date}</p>
               <div className="timeline-card">
@@ -31,11 +49,13 @@ function ExperienceSection() {
                       rel="noopener noreferrer"
                       className="timeline-link"
                     >
-                      linkedin ↗
+                      linkedin <IconExternal />
                     </a>
                   )}
                 </div>
-                <p className="timeline-desc">{item.description}</p>
+                <p className="timeline-desc">
+                  {highlightText(item.description, item.highlights)}
+                </p>
               </div>
             </li>
           ))}
@@ -44,4 +64,5 @@ function ExperienceSection() {
     </section>
   );
 }
+
 export default ExperienceSection;

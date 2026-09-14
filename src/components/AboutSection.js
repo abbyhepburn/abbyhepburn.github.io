@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import SectionHeader from './SectionHeader';
 import { aboutCards, site } from '../data/portfolio';
+import { IconBook, IconCode, IconFolder } from './Icons';
+
 const icons = {
-  code: '⟨/⟩',
-  book: '📖',
-  folder: '📁',
+  code: IconCode,
+  book: IconBook,
+  folder: IconFolder,
 };
+
 function AboutSection() {
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const photos = site.photos;
+  const current = photos[photoIndex];
+
   return (
     <section id="about" className="section">
       <div className="section-container">
@@ -15,8 +23,9 @@ function AboutSection() {
           title="About"
           subtitle="it me"
         />
+
         <div className="about-grid">
-          <div>
+          <div className="reveal">
             <p className="terminal-command">$ cat about.md</p>
             <div className="about-text">
               <p>
@@ -43,32 +52,60 @@ function AboutSection() {
                 questions or ideas.
               </p>
             </div>
+
             <ul className="about-cards">
-              {aboutCards.map((card) => (
-                <li key={card.title} className="about-card">
-                  <span className="about-card-icon">{icons[card.icon]}</span>
-                  <h3>{card.title}</h3>
-                  <p>{card.content}</p>
-                </li>
-              ))}
+              {aboutCards.map((card) => {
+                const Icon = icons[card.icon];
+                return (
+                  <li key={card.title} className="about-card">
+                    <span className="about-card-icon">
+                      <Icon />
+                    </span>
+                    <h3>{card.title}</h3>
+                    <p>{card.content}</p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
-          <div className="about-photo">
-            <div className="photo-stack">
-              <div className="photo-frame photo-frame-front">
-                <div className="photo-placeholder">
-                  <span>{site.firstName[0]}{site.lastName[0]}</span>
+
+          <div className="about-photo reveal">
+            <div
+              className="photo-stack"
+              role="button"
+              tabIndex={0}
+              aria-label={`Showing ${current.caption}. Click to view next photo.`}
+              onClick={() => setPhotoIndex((i) => (i + 1) % photos.length)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setPhotoIndex((i) => (i + 1) % photos.length);
+                }
+              }}
+            >
+              {photos.map((photo, i) => (
+                <div
+                  key={photo.caption}
+                  className={`photo-frame ${i === photoIndex ? 'photo-frame-front' : 'photo-frame-back'}`}
+                >
+                  <img src={photo.src} alt={photo.caption} />
                 </div>
-              </div>
-              <div className="photo-frame photo-frame-back" />
+              ))}
             </div>
             <div className="photo-caption">
               <p>
-                abby.jpeg <span className="text-sage">·</span> campus life
+                abby.jpeg <span className="text-sage">·</span> {current.caption}
               </p>
               <div className="photo-dots">
-                <span className="photo-dot active" />
-                <span className="photo-dot" />
+                {photos.map((photo, i) => (
+                  <button
+                    key={photo.caption}
+                    type="button"
+                    className={`photo-dot ${i === photoIndex ? 'active' : ''}`}
+                    aria-label={`View ${photo.caption}`}
+                    onClick={() => setPhotoIndex(i)}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -77,4 +114,5 @@ function AboutSection() {
     </section>
   );
 }
+
 export default AboutSection;
