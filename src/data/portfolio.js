@@ -88,8 +88,8 @@ export const leadership = [
   {
     id: '02', org: 'Real World Engineering', role: 'Software Design Team Lead',
     bullets: [
-      'Lead software development for a miniature autonomous robotic car.',
-      'Develop control logic, sensor- and ML-based decision-making, database tracking, and data processing.',
+      'Worked with a team of Mechanical & Electrical Engineers to create a robotic hand with 4-degrees of freedom.',
+      'Key tasks included developing control logic by creating Python functions for forward and inverse kinematics.',
     ],
   },
 ];

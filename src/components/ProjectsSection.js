@@ -49,6 +49,11 @@ function ProjectsSection() {
           subtitle="Projects listed on my resume"
         />
 
+        <figure className="project-feature reveal">
+          <img src="/images/flexright-screenshot.png" alt="FlexRight Coach showing live pose tracking during a bicep curl" />
+          <figcaption>FlexRight Coach</figcaption>
+        </figure>
+
         <div className="projects-grid">
           {visible.map((project) => (
             <ProjectCard key={project.id} project={project} />

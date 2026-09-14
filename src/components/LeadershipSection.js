@@ -13,6 +13,10 @@ function LeadershipSection() {
             </article>
           ))}
         </div>
+        <div className="leadership-photos reveal">
+          <img src="/images/leadership-group-1.jpg" alt="Abigail with a group of peers" loading="lazy" />
+          <img src="/images/leadership-group-2.jpg" alt="Abigail with a larger group at an event" loading="lazy" />
+        </div>
       </div>
     </section>
   );

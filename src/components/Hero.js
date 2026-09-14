@@ -36,12 +36,8 @@ function Hero() {
     <header id="top" className="hero">
       <div className="hero-grid">
         <div className="hero-content">
-          <p className="hero-eyebrow">
-            ~/hello_world <span className="text-faint">— hi, i&apos;m</span>
-          </p>
           <h1 className="hero-title">
             {site.firstName} <span className="text-sage">{site.lastName}</span>
-            <span className="wave" aria-hidden="true">👋</span>
           </h1>
           <p className="hero-typewriter">
             {displayText}
