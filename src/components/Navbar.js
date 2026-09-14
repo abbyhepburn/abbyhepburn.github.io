@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { navLinks, site } from '../data/portfolio';
 import { IconClose, IconMenu } from './Icons';
+import EmailCopyButton from './EmailCopyButton';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -53,10 +54,10 @@ function Navbar() {
         </ul>
 
         <div className="navbar-actions">
-          <a href={`mailto:${site.email}`} className="navbar-cta">
+          <EmailCopyButton className="navbar-cta">
             <span className="pulse-dot" />
             open_to_work
-          </a>
+          </EmailCopyButton>
           <button
             type="button"
             className="menu-toggle"
@@ -93,9 +94,9 @@ function Navbar() {
               </li>
             ))}
             <li className="mobile-menu-contact">
-              <a href={`mailto:${site.email}`} onClick={() => setMenuOpen(false)}>
+              <EmailCopyButton onCopy={() => setMenuOpen(false)}>
                 contact →
-              </a>
+              </EmailCopyButton>
             </li>
           </ul>
         </div>

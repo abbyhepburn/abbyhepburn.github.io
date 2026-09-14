@@ -1,5 +1,6 @@
 import { site } from '../data/portfolio';
 import { IconGithub, IconLinkedin, IconMail } from './Icons';
+import EmailCopyButton from './EmailCopyButton';
 
 function Footer() {
   return (
@@ -12,9 +13,9 @@ function Footer() {
           </h2>
           <p>Open to internships, oppurtuntities, and good conversations.</p>
           <div className="footer-social">
-            <a href={`mailto:${site.email}`} aria-label="Email">
+            <EmailCopyButton>
               <IconMail />
-            </a>
+            </EmailCopyButton>
             <a
               href={site.github}
               target="_blank"

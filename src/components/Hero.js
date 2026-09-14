@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { site } from '../data/portfolio';
 import { IconArrowDown, IconDownload, IconGithub, IconLinkedin, IconMail } from './Icons';
+import EmailCopyButton from './EmailCopyButton';
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -50,9 +51,9 @@ function Hero() {
             <a href="/Abigail-Hepburn-Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <IconDownload /> resume.pdf
             </a>
-            <a href={`mailto:${site.email}`} className="btn btn-icon" aria-label="Email">
+            <EmailCopyButton className="btn btn-icon">
               <IconMail />
-            </a>
+            </EmailCopyButton>
             <a
               href={site.github}
               target="_blank"

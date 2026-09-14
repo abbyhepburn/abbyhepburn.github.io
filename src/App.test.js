@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
 
-test('terminal responds to resume and help commands', () => {
+test('terminal and email copy controls work', async () => {
   render(<App />);
   const input = screen.getByLabelText('terminal input');
   fireEvent.change(input, { target: { value: 'help' } });
@@ -12,11 +12,15 @@ test('terminal responds to resume and help commands', () => {
   expect(document.querySelectorAll('.project-image-wrap img')).toHaveLength(0);
   expect(document.querySelector('.project-feature img')).toHaveAttribute('src', '/images/flexright-screenshot.png');
   expect(document.querySelectorAll('.leadership-photos img')).toHaveLength(2);
+  expect(screen.getByText('National Society of Black Engineers - Fall Regional Conference 2025!')).toBeInTheDocument();
   expect(screen.queryByText(/hello_world/i)).not.toBeInTheDocument();
   expect(screen.queryByText('👋')).not.toBeInTheDocument();
   expect(document.querySelector('.marquee-wrap')).toBeNull();
-  expect(screen.getAllByRole('link', { name: 'Email' })).toHaveLength(2);
-  expect(screen.getAllByRole('link', { name: 'Email' })[0]).toHaveAttribute('href', 'mailto:abigailzhepburn@gmail.com');
+  const writeText = jest.fn().mockResolvedValue(undefined);
+  Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText } });
+  fireEvent.click(document.querySelector('.hero-actions button[aria-label="Copy email address"]'));
+  await waitFor(() => expect(writeText).toHaveBeenCalledWith('abigailzhepburn@gmail.com'));
+  expect(await screen.findByRole('status')).toHaveTextContent('Email copied to clipboard');
   expect(document.querySelector('a[href="https://github.com/abbyhepburn/Face-Detection"]')).toBeInTheDocument();
   expect(document.querySelectorAll('.project-card')[0].querySelectorAll('.project-tags .tag')).toHaveLength(5);
   expect(screen.getByText('Open to internships, oppurtuntities, and good conversations.')).toBeInTheDocument();

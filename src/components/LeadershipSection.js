@@ -18,7 +18,7 @@ function LeadershipSection() {
             <img src="/images/leadership-group-1.jpg" alt="Abigail with a group of peers" loading="lazy" />
             <img src="/images/leadership-group-2.jpg" alt="Abigail with a larger group at an event" loading="lazy" />
           </div>
-          <figcaption>National Society of Black Engineers Fall Regional Conference 2025!</figcaption>
+          <figcaption>National Society of Black Engineers - Fall Regional Conference 2025!</figcaption>
         </figure>
       </div>
     </section>
