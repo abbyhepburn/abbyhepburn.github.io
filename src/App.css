@@ -570,6 +570,9 @@ main,
 .hero-actions .btn-primary { margin-right: 0.35rem; }
 .project-feature { max-width: 42rem; margin-left: auto; margin-right: auto; }
 .leadership-photos { max-width: 46rem; margin-left: auto; margin-right: auto; }
+.leadership-gallery { max-width: 46rem; margin: 2rem auto 0; }
+.leadership-gallery .leadership-photos { margin-top: 0; }
+.leadership-gallery figcaption { margin-top: 0.75rem; color: var(--color-sage); font: 0.85rem var(--font-mono); text-align: center; }
 .about-portrait { max-width: 19rem; }
 @media (min-width: 900px) { .about-profile { grid-template-columns: minmax(0, 1fr) 19rem; } }
 .hero { padding: 8rem 1.5rem 3rem; scroll-margin-top: 6rem; }
