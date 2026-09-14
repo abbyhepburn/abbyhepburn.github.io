@@ -15,7 +15,10 @@ test('terminal responds to resume and help commands', () => {
   expect(screen.queryByText(/hello_world/i)).not.toBeInTheDocument();
   expect(screen.queryByText('👋')).not.toBeInTheDocument();
   expect(document.querySelector('.marquee-wrap')).toBeNull();
-  expect(screen.getByRole('link', { name: /say hello/i })).toHaveAttribute('href', 'mailto:abigailzhepburn@gmail.com');
+  expect(screen.getAllByRole('link', { name: 'Email' })).toHaveLength(2);
+  expect(screen.getAllByRole('link', { name: 'Email' })[0]).toHaveAttribute('href', 'mailto:abigailzhepburn@gmail.com');
+  expect(document.querySelector('a[href="https://github.com/abbyhepburn/Face-Detection"]')).toBeInTheDocument();
+  expect(document.querySelectorAll('.project-card')[0].querySelectorAll('.project-tags .tag')).toHaveLength(5);
   expect(screen.getByText('Open to internships, oppurtuntities, and good conversations.')).toBeInTheDocument();
   expect(screen.queryByText(/designed & built from scratch/i)).not.toBeInTheDocument();
   fireEvent.change(input, { target: { value: 'experience' } });

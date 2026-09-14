@@ -37,6 +37,7 @@ export const projects = [
     id: '01', title: 'Face Detection System', date: 'April 2026',
     description: 'Created a real-time computer vision app using OpenCV and MediaPipe for facial landmark mapping and NumPy for high-performance image array processing. Integrated live video capture, 3D facial landmarks, and a PySide6 interface.',
     tags: ['Python', 'OpenCV', 'MediaPipe', 'NumPy', 'PySide6'],
+    github: 'https://github.com/abbyhepburn/Face-Detection',
   },
   {
     id: '02', title: 'FlexRight', date: 'January 2026',

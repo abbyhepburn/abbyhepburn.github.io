@@ -1,20 +1,7 @@
-import { useState } from 'react';
 import { site } from '../data/portfolio';
-import { IconCopy, IconGithub, IconLinkedin, IconMail } from './Icons';
+import { IconGithub, IconLinkedin, IconMail } from './Icons';
 
 function Footer() {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(site.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="section-container">
@@ -24,21 +11,10 @@ function Footer() {
             Let&apos;s build something<span className="text-sage">.</span>
           </h2>
           <p>Open to internships, oppurtuntities, and good conversations.</p>
-          <div className="footer-actions">
-            <a href="mailto:abigailzhepburn@gmail.com" className="btn btn-primary">
-              <IconMail /> say hello
-            </a>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={copyEmail}
-              aria-label="Copy email address"
-            >
-              <IconCopy />
-              {copied ? 'copied!' : site.email}
-            </button>
-          </div>
           <div className="footer-social">
+            <a href={`mailto:${site.email}`} aria-label="Email">
+              <IconMail />
+            </a>
             <a
               href={site.github}
               target="_blank"

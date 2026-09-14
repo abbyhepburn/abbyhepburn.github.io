@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { site } from '../data/portfolio';
-import { IconArrowDown, IconDownload, IconGithub, IconLinkedin } from './Icons';
+import { IconArrowDown, IconDownload, IconGithub, IconLinkedin, IconMail } from './Icons';
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -49,6 +49,9 @@ function Hero() {
           <div className="hero-actions">
             <a href="/Abigail-Hepburn-Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               <IconDownload /> resume.pdf
+            </a>
+            <a href={`mailto:${site.email}`} className="btn btn-icon" aria-label="Email">
+              <IconMail />
             </a>
             <a
               href={site.github}
