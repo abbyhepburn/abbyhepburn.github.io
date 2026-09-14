@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { site } from '../data/portfolio';
-import { IconArrowDown, IconDownload, IconGithub, IconLinkedin, IconMail } from './Icons';
+import { IconDownload, IconGithub, IconLinkedin, IconMail } from './Icons';
 import EmailCopyButton from './EmailCopyButton';
 
 function Hero() {
@@ -112,9 +112,6 @@ function Hero() {
         </div>
       </div>
 
-      <a href="#about" className="scroll-indicator" aria-label="Scroll to about">
-        <IconArrowDown />
-      </a>
     </header>
   );
 }

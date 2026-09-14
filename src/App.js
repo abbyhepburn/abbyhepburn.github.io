@@ -8,6 +8,7 @@ import LeadershipSection from './components/LeadershipSection';
 import TerminalSection from './components/TerminalSection';
 import SkillsSection from './components/SkillsSection';
 import Footer from './components/Footer';
+import SectionScrollButton from './components/SectionScrollButton';
 import useReveal from './hooks/useReveal';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <TerminalSection />
       </main>
       <Footer />
+      <SectionScrollButton />
     </div>
   );
 }

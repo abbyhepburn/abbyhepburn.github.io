@@ -4,7 +4,7 @@ import EmailCopyButton from './EmailCopyButton';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="section-container">
         <div className="footer-cta">
           <p className="footer-script">./get_in_touch.sh</p>
