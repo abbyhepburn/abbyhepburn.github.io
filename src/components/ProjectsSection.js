@@ -6,12 +6,10 @@ import { IconExternal, IconGithub } from './Icons';
 function ProjectCard({ project }) {
   return (
     <article className="project-card group reveal">
-      <div className="project-image-wrap">
-        <img src={project.image} alt={project.title} />
-      </div>
       <div className="project-body">
         <p className="project-id">proj_{project.id}</p>
         <h3>{project.title}</h3>
+        <p className="project-date">{project.date}</p>
         <p className="project-desc">{project.description}</p>
         <div className="project-tags">
           {project.tags.map((tag) => (
@@ -48,7 +46,7 @@ function ProjectsSection() {
           num="03"
           slug="things_i_built"
           title="Projects"
-          subtitle="things i made somehow"
+          subtitle="Projects listed on my resume"
         />
 
         <div className="projects-grid">

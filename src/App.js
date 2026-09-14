@@ -2,11 +2,11 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
-import GallerySection from './components/GallerySection';
 import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
 import LeadershipSection from './components/LeadershipSection';
 import TerminalSection from './components/TerminalSection';
+import SkillsSection from './components/SkillsSection';
 import Footer from './components/Footer';
 import useReveal from './hooks/useReveal';
 
@@ -20,10 +20,10 @@ function App() {
       <main>
         <Hero />
         <AboutSection />
-        <GallerySection />
-        <ProjectsSection />
         <ExperienceSection />
+        <ProjectsSection />
         <LeadershipSection />
+        <SkillsSection />
         <TerminalSection />
       </main>
       <Footer />

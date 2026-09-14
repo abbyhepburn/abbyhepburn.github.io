@@ -74,9 +74,6 @@ function Hero() {
             >
               <IconLinkedin />
             </a>
-            <a href="#terminal" className="hero-terminal-link">
-              or try the terminal ↓
-            </a>
           </div>
         </div>
 
@@ -90,11 +87,7 @@ function Hero() {
             </div>
             <div className="terminal-body identity-body">
               <div className="identity-header">
-                <img
-                  className="identity-avatar"
-                  src={site.avatar}
-                  alt={site.name}
-                />
+
                 <div>
                   <p className="identity-name">{site.name}</p>
                   <p className="identity-location">{site.location}</p>

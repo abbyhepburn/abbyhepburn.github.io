@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import SectionHeader from './SectionHeader';
-import { projects, site } from '../data/portfolio';
+import { experience, projects, site, skills } from '../data/portfolio';
 const COMMANDS = {
   help: `Available commands:
   help       — show this message
@@ -18,8 +18,8 @@ Location: ${site.location}`,
   projects: projects
     .map((p) => `  • ${p.title} — ${p.tags.join(', ')}`)
     .join('\n'),
-  experience: 'BeachLens — Data Engineer Intern\nNextEra Energy — Power Delivery Engineer Intern\nUF Data Studio — Research Assistant',
-  skills: site.skills.join(', '),
+  experience: experience.map((item) => `${item.company} — ${item.role} (${item.date})`).join('\n'),
+  skills: `Languages: ${skills.languages}\nDeveloper Tools: ${skills.tools}\nCertifications: ${skills.certifications}`,
   resume: 'Resume: /Abigail-Hepburn-Resume.pdf',
   contact: `Email: ${site.email}
 GitHub: ${site.github}
@@ -81,7 +81,7 @@ function TerminalSection() {
           num="06"
           slug="talk_to_my_website"
           title="Terminal"
-          subtitle="This one actually works. Type help and poke around."
+          subtitle="Try the terminal here. Type help to see the available commands."
         />
         <div
           className="terminal-window terminal-interactive reveal"

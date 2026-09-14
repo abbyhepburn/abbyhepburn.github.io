@@ -540,3 +540,17 @@ main,
     display: none;
   }
 }
+/* Resume content */
+.resume-stack { display: grid; gap: 1.25rem; }
+.resume-panel { border: 1px solid var(--color-line); border-radius: 0.75rem; background: var(--color-card); padding: clamp(1.25rem, 3vw, 2rem); color: var(--color-muted); line-height: 1.65; }
+.resume-panel h3 { color: var(--color-ink); margin: 0; font: 600 1.2rem var(--font-display); }
+.resume-panel p { margin: 0.45rem 0 0; }
+.resume-panel strong { color: var(--color-ink); }
+.resume-heading { display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 1rem; }
+.resume-heading > span { color: var(--color-sage); font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap; }
+.resume-panel ul { margin: 0; padding-left: 1.25rem; }
+.resume-panel li + li { margin-top: 0.6rem; }
+.project-date { color: var(--color-sage); font-family: var(--font-mono); font-size: 0.8rem; margin: 0.4rem 0 1rem; }
+.project-card { border: 1px solid var(--color-line); border-radius: 0.75rem; background: var(--color-card); }
+.project-body { padding: 1.5rem; }
+@media (max-width: 640px) { .resume-heading { flex-direction: column; } .resume-heading > span { white-space: normal; } }
