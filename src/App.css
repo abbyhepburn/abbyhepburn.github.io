@@ -156,16 +156,43 @@ main,
   right: 0;
   top: 0;
   bottom: 0;
-  width: 18rem;
+  width: min(18rem, 85vw);
   background: var(--color-surface);
   border-left: 1px solid var(--color-line);
-  padding: 5rem 2rem 2rem;
+  padding: 5rem 1.5rem 2rem;
   transform: translateX(100%);
   transition: transform 0.3s;
 }
 .mobile-menu-open .mobile-menu-panel {
   transform: translateX(0);
 }
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-ink);
+}
+.mobile-menu-panel ul { display: grid; gap: 0.25rem; }
+.mobile-menu-panel a,
+.mobile-menu-contact button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0.25rem;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font: 500 0.95rem var(--font-mono);
+  text-align: left;
+}
+.mobile-menu-panel a:hover,
+.mobile-menu-contact button:hover { color: var(--color-sage-bright); }
+.mobile-menu-panel .text-faint { margin-right: 0.5rem; }
+.mobile-menu-contact { margin-top: 0.75rem; }
+.mobile-menu-contact button { color: var(--color-sage); }
 /* Terminal window */
 .terminal-window {
   border-radius: 0.75rem;
@@ -606,3 +633,24 @@ main,
 @media (min-width: 1024px) { .hero-title { white-space: nowrap; } }
 
 @media (min-width: 1024px) { .hero-portrait { margin-top: 3rem; } }
+
+@media (max-width: 639px) {
+  .navbar-inner { gap: 0.75rem; padding: 0.9rem 1rem; }
+  .navbar-brand { min-width: 0; font-size: 0.75rem; white-space: nowrap; }
+  .menu-toggle { flex: none; }
+  .hero { padding: 6.25rem 1rem 2.5rem; }
+  .hero-grid { gap: 1.75rem; }
+  .hero-title { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+  .hero-description { font-size: 0.95rem; }
+  .hero-content .hero-identity { margin-top: 1.25rem; }
+  .identity-body { padding: 1rem; }
+  .identity-json { font-size: 0.72rem; line-height: 1.55; overflow-wrap: anywhere; }
+  .hero-actions { gap: 0.65rem; margin-top: 1.25rem; }
+  .hero-actions .btn-primary { margin-right: 0; }
+  .hero-portrait { margin-top: 0; }
+  .section { padding-left: 1rem; padding-right: 1rem; }
+  .section-label { flex-wrap: wrap; font-size: 0.75rem; }
+  .resume-panel, .project-body { padding: 1.1rem; }
+  .terminal-input-row input { min-width: 0; }
+  .footer { padding-left: 1rem; padding-right: 1rem; }
+}

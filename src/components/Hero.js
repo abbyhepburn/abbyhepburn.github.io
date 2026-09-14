@@ -69,7 +69,7 @@ function Hero() {
                 {'  '}<span className="json-key">&quot;focus&quot;</span>: [
                 <span className="json-string">&quot;data engineering&quot;</span>,{' '}
                 <span className="json-string">&quot;computer vision&quot;</span>,{'\n'}
-                {'            '}<span className="json-string">&quot;software&quot;</span>],{'\n'}
+                {'  '}<span className="json-string">&quot;software&quot;</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;coords&quot;</span>: [
                 <span className="json-bright">Gainesville, FL</span>],{'\n'}
                 {'  '}<span className="json-key">&quot;status&quot;</span>:{' '}
