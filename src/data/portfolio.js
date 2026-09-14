@@ -7,7 +7,7 @@ export const site = {
   tagline: 'Computer Engineering student building data pipelines, computer vision tools, and software for real-world problems.',
   philosophy: 'I enjoy turning complex problems into useful software.',
   philosophyContext: 'My work spans data engineering, research, and computer vision.',
-  roles: ['computer engineering student', 'data engineer', 'software developer'],
+  roles: ['computer engineering student', 'data engineer', 'software developer', 'innovator', 'creator', 'curious problem solver'],
   skills: ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java', 'SQL', 'MongoDB', 'OpenCV', 'Git', 'Supabase'],
 };
 export const navLinks = [
