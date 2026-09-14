@@ -43,7 +43,7 @@ function Hero() {
             <span className="cursor-blink" />
           </p>
           <p className="hero-description">
-            Computer Engineering at the University of Florida. {' '}
+            Studying Computer Engineering at the University of Florida. {' '}
             <span className="text-ink">{site.philosophy}</span>{' '}
             {site.philosophyContext}
           </p>
@@ -109,6 +109,10 @@ function Hero() {
               </pre>
             </div>
           </div>
+          <figure className="hero-portrait">
+            <img src="/abby.jpeg" alt="Abigail Hepburn outside Malachowsky Hall" />
+            <figcaption>abby.jpeg</figcaption>
+          </figure>
         </div>
       </div>
 

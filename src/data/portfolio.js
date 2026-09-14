@@ -6,7 +6,7 @@ export const site = {
   location: 'Gainesville, FL',
   tagline: 'Computer Engineering student building data pipelines, computer vision tools, and software for real-world problems.',
   philosophy: 'I enjoy turning complex problems into useful software.',
-  philosophyContext: 'My work spans data engineering, research, and computer vision.',
+  philosophyContext: 'My work spans data engineering, research, and more.',
   roles: ['computer engineering student', 'data engineer', 'software developer', 'innovator', 'creator', 'curious problem solver'],
   skills: ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java', 'SQL', 'MongoDB', 'OpenCV', 'Git', 'Supabase'],
 };

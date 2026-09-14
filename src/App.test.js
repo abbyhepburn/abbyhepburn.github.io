@@ -12,6 +12,9 @@ test('terminal and email copy controls work', async () => {
   expect(document.querySelectorAll('.project-image-wrap img')).toHaveLength(0);
   expect(document.querySelector('.project-feature img')).toHaveAttribute('src', '/images/flexright-screenshot.png');
   expect(document.querySelectorAll('.leadership-photos img')).toHaveLength(2);
+  expect(document.querySelector('.hero-card-wrap .hero-portrait img')).toHaveAttribute('src', '/abby.jpeg');
+  expect(document.querySelector('#about img')).toBeNull();
+  expect(screen.getByText(/Studying Computer Engineering at the University of Florida/)).toBeInTheDocument();
   expect(screen.getByText('National Society of Black Engineers - Fall Regional Conference 2025!')).toBeInTheDocument();
   expect(screen.queryByText(/hello_world/i)).not.toBeInTheDocument();
   expect(screen.queryByText('👋')).not.toBeInTheDocument();
