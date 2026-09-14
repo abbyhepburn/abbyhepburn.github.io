@@ -47,35 +47,6 @@ function Hero() {
             <span className="text-ink">{site.philosophy}</span>{' '}
             {site.philosophyContext}
           </p>
-          <div className="hero-actions">
-            <a href="/Abigail-Hepburn-Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              <IconDownload /> resume.pdf
-            </a>
-            <EmailCopyButton className="btn btn-icon">
-              <IconMail />
-            </EmailCopyButton>
-            <a
-              href={site.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-icon"
-              aria-label="GitHub"
-            >
-              <IconGithub />
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-icon"
-              aria-label="LinkedIn"
-            >
-              <IconLinkedin />
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-card-wrap">
           <div className="terminal-window hero-identity">
             <div className="terminal-titlebar">
               <span className="dot dot-red" />
@@ -109,6 +80,35 @@ function Hero() {
               </pre>
             </div>
           </div>
+          <div className="hero-actions">
+            <a href="/Abigail-Hepburn-Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <IconDownload /> resume.pdf
+            </a>
+            <EmailCopyButton className="btn btn-icon">
+              <IconMail />
+            </EmailCopyButton>
+            <a
+              href={site.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-icon"
+              aria-label="GitHub"
+            >
+              <IconGithub />
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-icon"
+              aria-label="LinkedIn"
+            >
+              <IconLinkedin />
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-photo-column">
           <figure className="hero-portrait">
             <img src="/abby.jpeg" alt="Abigail Hepburn outside Malachowsky Hall" />
             <figcaption>abby.jpeg</figcaption>
